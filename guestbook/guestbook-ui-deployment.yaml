@@ -1,4 +1,3 @@
-{{- if .Values.env.config}}
 apiVersion: apps/v1 
 kind: Deployment
 metadata:
@@ -19,5 +18,3 @@ spec:
         name: guestbook-ui
         ports:
         - containerPort: 80
----
-{{- end}}
