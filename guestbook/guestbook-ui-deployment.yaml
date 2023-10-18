@@ -1,9 +1,10 @@
+{{- if .Values.env.config}}
 apiVersion: apps/v1 
 kind: Deployment
 metadata:
   name: guestbook-ui
 spec:
-  replicas: 3
+  replicas: {{.Values.replicas}}
   revisionHistoryLimit: 3
   selector:
     matchLabels:
@@ -18,3 +19,5 @@ spec:
         name: guestbook-ui
         ports:
         - containerPort: 80
+---
+{{- end}}
